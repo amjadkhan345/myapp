@@ -1,0 +1,332 @@
+{% load static %}
+{% block main %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <!-- Meta tags -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Drift - A fully responsive, HTML5 based admin template">
+        <meta name="keywords" content="Responsive, HTML5, admin theme, business, professional, jQuery, web design, CSS3, sass">
+        <!-- /meta tags -->
+        <title>DanfoPay</title>
+
+        <!-- Site favicon -->
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.ico'%}" type="image/x-icon">
+        <!-- /site favicon -->
+
+        <!-- Font Icon Styles -->
+        <link rel="stylesheet" href="{% static 'node_modules/flag-icon-css/css/flag-icon.min.css'%}">
+        <link rel="stylesheet" href="{% static 'vendors/gaxon-icon/styles.css'%}">
+        <!-- /font icon Styles -->
+
+        <!-- Perfect Scrollbar stylesheet -->
+        <link rel="stylesheet" href="{% static 'node_modules/perfect-scrollbar/css/perfect-scrollbar.css'%}">
+        <!-- /perfect scrollbar stylesheet -->
+
+        <!-- Load Styles -->    <link rel="stylesheet" href="{% static 'assets/css/semidark-style-1.min.css'%}">
+        <!-- /load styles -->
+
+    </head>
+    <body class="dt-sidebar--fixed dt-header--fixed">
+
+    <!-- Loader -->
+    <div class="dt-loader-container">
+        <div class="dt-loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
+    </div>
+    <!-- /loader -->
+    <!-- Root -->
+    <div class="dt-root">
+        <div class="dt-root__inner">
+            <!-- Header -->
+            {% include 'header.html' %}
+            <!-- /header -->
+            <!-- Site Main -->
+            <main class="dt-main">
+                <!-- Sidebar -->
+                {% include 'sidebar.html' %}
+                <!-- /sidebar -->
+                <!-- Site Content Wrapper -->
+                <div class="dt-content-wrapper">
+
+                    <!-- Site Content -->
+                    <div class="dt-content">
+
+                        <!-- Grid -->
+                        <div class="row">
+
+                            <!-- Grid Item -->
+                            <div class="col-xl-12">
+                                {% for message in messages %}
+                                    <div class="alert alert-success" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                                <!-- Module -->
+                                <div class="dt-module">
+
+                                    <!-- Module Sidebar -->
+                                    <div class="dt-module__sidebar">
+
+                                        <!-- Sidebar Header -->
+                                        <div class="dt-module__sidebar-header border-bottom">
+                                            <div class="d-none d-md-flex align-items-center">
+                                                <i class="icon icon-open-mail icon-1x mr-3 text-dark"></i>
+                                                <span class="h3 mb-0">Dispute</span>
+                                            </div>
+
+                                            <!-- App Quick Menu -->
+                                            <div class="quick-menu-list d-md-none">
+
+                                                <a href="javascript:void(0)" class="quick-menu d-none d-md-block"
+                                                   data-toggle="mdrawer" data-target="#drawer-search-bar"><i
+                                                        class="icon icon-search"></i></a>
+                                                <a href="javascript:void(0)" class="quick-menu" data-open="compose"><i
+                                                        class="icon icon-editors"></i></a>
+                                                <a href="javascript:void(0)" class="quick-menu" data-toggle="mdrawer"
+                                                   data-target="#drawer-notifications"><i
+                                                        class="icon icon-notification2"></i></a>
+                                                <a href="javascript:void(0)" class="quick-menu d-md-none"
+                                                   data-toggle="msidebar-content"><i class="icon icon-menu"></i></a>
+                                            </div>
+                                            <!-- /app quick menu -->
+                                        </div>
+                                        <!-- /sidebar header -->
+
+                                        <!-- Sidebar Menu -->
+                                        <div class="dt-module__sidebar-content ps-custom-scrollbar">
+
+                                            <!-- Button -->
+                                            <div class="action-area mt-5 mb-7 d-none d-md-block">
+                                                <a href="javascript:void(0)"
+                                                   class="btn btn-shadow btn-default compose-btn btn-rounded"
+                                                   data-open="compose">
+                                                    <i class="icon icon-editors icon-fw mr-2"></i>Compose</a>
+                                            </div>
+                                            <!-- /button -->
+
+                                            <!-- Sidebar Navigation -->
+                                            <ul class="dt-module-side-nav">
+
+                                                <!-- Menu Header -->
+                                                <li class="dt-module-side-nav__header">
+                                                    <span class="dt-module-side-nav__text">main</span>
+                                                </li>
+                                                <!-- /menu header -->
+
+                                                <!-- Menu Item -->
+                                                <li class="dt-module-side-nav__item active">
+                                                    <a href="javascript:void(0)" class="dt-module-side-nav__link">
+                                                        <i class="icon icon-inbox icon-fw icon-lg"></i>
+                                                        <span class="dt-module-side-nav__text">Inbox</span> </a>
+                                                </li>
+
+                                            </ul>
+                                            <!-- /sidebar navigation -->
+                                        </div>
+                                        <!-- /sidebar Menu -->
+
+                                    </div>
+                                    <!-- /module sidebar -->
+
+                                    <!-- Module Container -->
+                                    <div class="dt-module__container">
+                                        <div class="dt-module__content ps-custom-scrollbar">
+
+                                            <!-- Module Content Inner -->
+                                            <div class="dt-module__content-inner">
+
+                                                <div class="px-1 pb-4 border-bottom border-w-2 mb-1 mt-n1">
+                                                </div>
+
+                                                <!-- Module List -->
+                                                <div class="dt-module__list">
+                                                    <!-- Module Item -->
+                                                    {% for data in show %}
+                                                        <div class="dt-module__list-item">
+
+                                                            <!-- Checkbox -->
+                                                            <div class="dt-checkbox dt-checkbox-icon dt-checkbox-only mr-5">
+                                                                <input id="icon-checkbox-11" type="checkbox">
+                                                                <label class="font-weight-light dt-checkbox-content" for="icon-checkbox-11">
+                                                                    <span class="unchecked"><i class="icon icon-box-o icon-fw icon-xl"></i></span>
+                                                                    <span class="checked"><i class="icon icon-box-check-o icon-fw icon-xl text-primary"></i></span>
+                                                                </label>
+                                                            </div>
+                                                            <!-- /checkbox -->
+
+                                                            <!-- Checkbox -->
+                                                            <div class="dt-checkbox dt-checkbox-icon dt-checkbox-only mr-5">
+                                                                <input id="icon-checkbox-12" type="checkbox">
+                                                                <label class="font-weight-light dt-checkbox-content" for="icon-checkbox-12">
+                                                                    <span class="unchecked"><i class="icon icon-star-o icon-fw icon-xl"></i></span>
+                                                                    <span class="checked"><i class="icon icon-star-fill icon-fw icon-xl text-warning"></i></span>
+                                                                </label>
+                                                            </div>
+                                                            <!-- /checkbox -->
+                                                            {{ data.subject }}&nbsp;&nbsp;&nbsp;
+                                                            <!-- Module Content -->
+                                                            <div class="dt-module__list-item-content"
+                                                                 data-location="reply/{{ data.ticket_id }}">
+                                                                <div class="user-detail">
+                                                                    <span class="user-name">Ticket ID: {{ data.ticket_id }}</span>
+                                                                    <span class="dt-separator-v">&nbsp;</span>
+                                                                    <span class="designation">Category: {{ data.subject }}</span>
+                                                                </div>
+                                                                <p class="mb-0 text-light-gray text-truncate">{{ data.content }}</p>
+                                                            </div>
+                                                            <!-- /module content -->
+
+                                                            <!-- Module Info -->
+                                                            <div class="dt-module__list-item-info">
+                                                                <div class="badge-group">
+                                                                    <span class="badge bg-dark-blue text-white">{{ data.priority }}</span>
+                                                                </div>
+                                                                <div class="badge-group">
+                                                                    <span class="badge bg-dark-blue text-white">{{ data.status }}</span>
+                                                                </div>
+                                                                <span>{{ data.date_created }}</span>
+                                                            </div>
+                                                            <!-- /module info -->
+                                                        </div>
+                                                    {% endfor %}
+                                                </div>
+                                                <!-- /module list -->
+
+                                            </div>
+                                            <!-- /module content inner -->
+
+                                        </div>
+                                        <!-- /module content -->
+
+                                    </div>
+                                    <!-- /module container -->
+
+                                    <!-- Module Drawer -->
+                                    <div class="dt-module__drawer dt-drawer position-left">
+
+                                        <!-- Module Drawer Inner -->
+                                        <div class="dt-module__drawer-inner">
+                                        </div>
+                                        <!-- /module drawer inner -->
+
+                                    </div>
+                                    <!-- /module drawer -->
+
+                                </div>
+                                <!-- /module -->
+
+                            </div>
+                            <!-- /grid item -->
+
+                        </div>
+                        <!-- /grid -->
+
+                    </div>
+                    <!-- /site content -->
+
+                    <!-- Footer -->
+                    {% include 'footer.html' %}
+                    <!-- /footer -->
+                </div>
+            </main>
+
+            <!-- Compose Mail Box -->
+            <div class="compose-mail-box">
+
+                <!-- Compose Mail Header -->
+                <div class="compose-mail-box__header" data-toggle="minimize">
+                    <div class="title">
+                        <i class="icon icon-editors icon-fw icon-xl mr-2"></i>Create New Ticket
+                    </div>
+
+                    <div class="action-area ml-auto">
+                        <a class="text-white mr-3" href="javascript:void(0)"> <i class="icon icon-chevrolet-down icon-xl"></i> </a>
+                        <a class="text-white" href="javascript:void(0)" data-dismiss="compose"> <i
+                                class="icon icon-remove icon-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- /compose mail header -->
+
+                <!-- Compose Mail Body -->
+                <div class="compose-mail-box__body">
+                    <!-- Form -->
+                    <form action="ticket" method="post">
+                        {% csrf_token %}
+                        <!-- Form Group -->
+                        <div class="form-group mb-1">
+                            <select class="form-control" name="category">
+                                <option>Select Category</option>
+                                <option value="Tech">Tech</option>
+                                <option value="News">News</option>
+                                <option value="Political">Political</option>
+                            </select>
+                        </div>
+                        <div class="form-group mb-1">
+                            <select class="form-control" name="priority">
+                                <option>Select Priority</option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
+                            </select>
+                        </div>
+                        <!-- /form group -->
+
+                        <!-- Form Group -->
+                        <div class="form-group">
+                            <input type="text" name="subject" class="form-control" id="subject" placeholder="Subject">
+                        </div>
+                        <!-- /form group -->
+
+                        <!-- Form Group -->
+                        <div class="form-group">
+                            <textarea class="form-control" name="content" id="textarea"></textarea>
+                        </div>
+                        <!-- /form group -->
+
+                        <!-- Form Group -->
+                        <div class="d-flex align-items-center">
+                            <button type="submit" class="btn btn-primary btn-sm">Create Ticket</button>
+
+                            <div class="action-area ml-auto">
+                                <a class="text-dark" href="javascript:void(0)" data-dismiss="compose">
+                                    <i class="icon icon-trash-filled mr-1"></i> <span class="f-12 text-uppercase align-middle">discard</span>
+                                </a>
+                            </div>
+                        </div>
+                        <!-- /form group -->
+                    </form>
+                    <!-- /form -->
+                </div>
+                <!-- /compose mail body -->
+
+            </div>
+            <!-- /compose mail box -->
+        </div>
+    </div>
+    <!-- /root -->
+    <!-- Optional JavaScript -->
+    <script src="{% static 'node_modules/jquery/dist/jquery.min.js'%}"></script>
+    <script src="{% static 'node_modules/moment/moment.js'%}"></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'%}"></script>
+    <!-- Perfect Scrollbar jQuery -->
+    <script src="{% static 'node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js'%}"></script>
+    <!-- /perfect scrollbar jQuery -->
+
+    <!-- masonry script -->
+    <script src="{% static 'node_modules/masonry-layout/dist/masonry.pkgd.min.js'%}"></script>
+    <script src="{% static 'node_modules/sweetalert2/dist/sweetalert2.js'%}"></script>
+    <script src="{% static 'assets/js/functions.js'%}"></script>
+    <script src="{% static 'assets/js/customizer.js'%}"></script><!-- Custom JavaScript -->
+    <script src="{% static 'assets/js/script.js'%}"></script>
+    <script src="{% static 'assets/js/custom/apps/app.js'%}"></script>
+    <script src="{% static 'assets/js/custom/apps/mail-app.js'%}"></script>
+    </body>
+    </html>
+{% endblock %}
